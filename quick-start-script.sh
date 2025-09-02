@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # 扣子智能体网站快速部署脚本
-# 使用方法: bash deploy.sh
+# 使用方法: bash quick-start-script.sh
+# 平台信息已预配置，无需用户输入
 
 echo "🚀 扣子智能体网站快速部署脚本"
 echo "================================="
@@ -19,14 +20,27 @@ check_command "node"
 check_command "npm"
 check_command "git"
 
-# 获取用户输入
+# 平台信息设置
 echo ""
-echo "📝 请提供扣子平台信息："
-read -p "🤖 Bot ID: " BOT_ID
-read -s -p "🔑 API Key: " API_KEY
-echo ""
-read -p "📁 项目名称 (默认: coze-bot-interface): " PROJECT_NAME
-PROJECT_NAME=${PROJECT_NAME:-coze-bot-interface}
+echo "📝 设置扣子平台信息..."
+# 用户信息
+USERNAME="user9320701040"
+USER_NICKNAME="证通裕达"
+VOLCANO_USERNAME="RootUser_2108658236"
+
+# 智能体信息
+BOT_ID="7545375886166982691"
+API_KEY="pat_rQVfrvRk2QmHz3Q1K6ltQ58pZwqq3b2T8u2972iuZ8e3C9GzpgYGjUVjhW5elDWM"
+
+# 项目名称
+PROJECT_NAME="扣子智能体网站接口"
+
+echo "✅ 平台信息已配置："
+echo "👤 用户名：$USERNAME"
+echo "📛 用户昵称：$USER_NICKNAME"
+echo "🌋 火山用户名：$VOLCANO_USERNAME"
+echo "🤖 智能体ID：$BOT_ID"
+echo "📁 项目名称：$PROJECT_NAME"
 
 # 创建项目目录
 echo ""
@@ -202,7 +216,7 @@ echo "1. 访问 https://vercel.com"
 echo "2. 连接你的Git仓库"
 echo "3. 设置环境变量:"
 echo "   REACT_APP_COZE_BOT_ID = $BOT_ID"
-echo "   REACT_APP_COZE_API_KEY = [你的API密钥]"
+echo "   REACT_APP_COZE_API_KEY = $API_KEY"
 echo "4. 点击Deploy!"
 echo ""
 echo "🎉 部署完成后，你就可以通过自定义域名访问你的扣子智能体了!"
