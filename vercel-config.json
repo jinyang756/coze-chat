@@ -1,0 +1,27 @@
+{
+  "name": "coze-bot-interface",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "REACT_APP_COZE_BOT_ID": "@coze_bot_id",
+    "REACT_APP_COZE_API_KEY": "@coze_api_key"
+  }
+}
